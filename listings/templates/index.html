@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="container">
+        <h1>Real Estate Listings</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Zip</th>
+                    <th>Price</th>
+                    <th>Size</th>
+                    <th>Bedrooms</th>
+                    <th>Bathrooms</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for listing in listings %}
+                    <tr>
+                        <td>{{ listing.address }}</td>
+                        <td>{{ listing.city }}</td>
+                        <td>{{ listing.state }}</td>
+                        <td>{{ listing.zip }}</td>
+                        <td>{{ listing.price }}</td>
+                        <td>{{ listing.size }}</td>
+                        <td>{{ listing.bedrooms }}</td>
+                        <td>{{ listing.bathrooms }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
